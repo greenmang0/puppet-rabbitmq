@@ -16,6 +16,10 @@ class rabbitmq {
 
         include rabbitmq::params
 
+	Exec {
+	    path => "${rabbitmq::params::path}"
+	}
+
         package { "python-software-properties":
                 ensure => installed,
         }
@@ -42,10 +46,16 @@ class rabbitmq {
                 require => Exec["update-apt"],
         }
 
+	exec { "enable-mgmt-plugin":
+		command => "rabbitmq-plugins enable rabbitmq_management",
+                require => Package[$rabbitmq::params::package],
+	}
+
         service { "rabbitmq-server":
+		restart => "service rabbitmq-server restart",
                 enable => true,
                 ensure => running,
-                require => Package[$rabbitmq::params::package],
+                require => Exec["enable-mgmt-plugin"],
         }
 }
 
