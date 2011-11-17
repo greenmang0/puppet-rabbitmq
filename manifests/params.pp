@@ -12,5 +12,6 @@
 class rabbitmq::params {
         $repository = "deb http://www.rabbitmq.com/debian/ testing main"
         $package = "rabbitmq-server"
+	$path = "/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
 }
 
