@@ -17,9 +17,6 @@ Installation
 ============
 
 * cd /etc/puppet/modules/ && git clone git://github.com/greenmang0/puppet-rabbitmq.git rabbitmq
-* Make sure that you have "path" for "exec" in your defaults, something like
-     Exec { path => "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin" }
-  in the /etc/puppet/manifests/site.pp file.
 
 * Include rabbitmq class in your nodes where you want to have it installed.
 
