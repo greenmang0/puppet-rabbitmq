@@ -20,6 +20,5 @@ Installation
 
 * Include rabbitmq class in your nodes where you want to have it installed.
 
-* rabbitmq-plugins command won't work with RabbitMQ Version less than 2.7.x, remove that block
-from init.pp to get it working.
+* rabbitmq-plugins command won't work with RabbitMQ Version less than 2.7.x, remove that block from init.pp to get it working.
 
